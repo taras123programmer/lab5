@@ -17,9 +17,10 @@ test-job:
   script:
     - pip install -r requirements.txt
       PYTHONPATH=. pytest --cov=./ --cov-report=xml -cov-fail-under=50 tests/
-   artifacts:
+  artifacts:
     reports:
-      cobertura: coverage.xml
+      cobertura:
+        coverage.xml
 
 build-job:       
   stage: build
