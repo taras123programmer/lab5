@@ -16,8 +16,10 @@ test-job:
   image: python:3.11
   script:
     - pip install -r requirements.txt
-    - pip install pytest
-    - pytest
+      PYTHONPATH=. pytest --cov=./ --cov-report=xml -cov-fail-under=50 tests/
+   artifacts:
+    reports:
+      cobertura: coverage.xml
 
 build-job:       
   stage: build
