@@ -33,7 +33,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: tests
-    rules:
+    only:
       - if: '$CI_COMMIT_BRANCH == "main"'
     steps:
       - uses: actions/checkout@v4
