@@ -29,7 +29,7 @@ build-job:
   script:
     - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
     - docker build -t "$DOCKER_IMAGE" .
-    - docker tag myapp:latetеst registry.gitlab.com/ivankiv123-group/devops_lab5/myapp:latest
+    - docker tag myapp:latеst registry.gitlab.com/ivankiv123-group/devops_lab5/myapp:latest
     - docker push registry.gitlab.com/ivankiv123-group/devops_lab5/myapp:latest
   only:
     - main
