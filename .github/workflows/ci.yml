@@ -33,8 +33,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     needs: tests
-    only:
-      - main
+    if: github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
       - uses: docker/login-action@v3
